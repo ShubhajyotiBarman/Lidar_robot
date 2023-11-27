@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="my_bot1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00025836 8.6736E-19 -0.0098101"
+        rpy="0 0 0" />
+      <mass
+        value="0.12667" />
+      <inertia
+        ixx="4.2301E-05"
+        ixy="8.6253E-22"
+        ixz="6.2799E-07"
+        iyy="0.00010727"
+        iyz="-3.6021E-22"
+        izz="0.00013894" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_bot1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_bot1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="0 -0.005 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0070686" />
+      <inertia
+        ixx="4.5651E-07"
+        ixy="-1.0245E-39"
+        ixz="0"
+        iyy="7.9522E-07"
+        iyz="1.0151E-39"
+        izz="4.5651E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_bot1/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.15 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_bot1/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.025 0.045 -0.015"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="0 0.005 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0070686" />
+      <inertia
+        ixx="4.5651E-07"
+        ixy="-1.0245E-39"
+        ixz="4.7793E-55"
+        iyy="7.9522E-07"
+        iyz="2.6254E-39"
+        izz="4.5651E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_bot1/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.15 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_bot1/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.025 -0.045 -0.015"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="stepper">
+    <inertial>
+      <origin
+        xyz="0.00025836 8.6736E-19 -0.0098101"
+        rpy="0 0 0" />
+      <mass
+        value="0.12667" />
+      <inertia
+        ixx="4.2301E-05"
+        ixy="8.6253E-22"
+        ixz="6.2799E-07"
+        iyy="0.00010727"
+        iyz="-3.6021E-22"
+        izz="0.00013894" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_bot1/meshes/stepper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.3 0.3 0.5 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_bot1/meshes/stepper.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stepper_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.02"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="stepper" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="lidar">
+    <inertial>
+      <origin
+        xyz="0.00010591 -1.7347E-18 -0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.0020393" />
+      <inertia
+        ixx="8.4438E-08"
+        ixy="7.4517E-24"
+        ixz="-3.499E-24"
+        iyy="3.4563E-08"
+        iyz="2.8674E-24"
+        izz="8.5545E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_bot1/meshes/lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_bot1/meshes/lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.01"
+      rpy="0 0 0" />
+    <parent
+      link="stepper" />
+    <child
+      link="lidar" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
